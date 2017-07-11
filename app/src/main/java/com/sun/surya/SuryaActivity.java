@@ -1,9 +1,8 @@
 package com.sun.surya;
 
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,7 +16,15 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.luseen.spacenavigation.SpaceItem;
+import com.luseen.spacenavigation.SpaceNavigationView;
+import com.luseen.spacenavigation.SpaceOnClickListener;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,6 +43,8 @@ public class SuryaActivity extends AppCompatActivity
     TextView responseText;
     APIInterface apiInterface;
     ArrayList<MasterFlow> mMaster;
+    private CustomViewPager viewPager;
+    SpaceNavigationView spaceNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +52,8 @@ public class SuryaActivity extends AppCompatActivity
         setContentView(R.layout.activity_surya);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        responseText = (TextView) findViewById(R.id.response);
+       // responseText = (TextView) findViewById(R.id.response);
         apiInterface = APIClient.getClient().create(APIInterface.class);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,11 +64,10 @@ public class SuryaActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Call call = apiInterface.doGetUserList(0);
+      /*  Call call = apiInterface.doGetUserList(0);
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
-
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 gsonBuilder.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS" );
                 Gson gson = gsonBuilder.serializeNulls().create();
@@ -78,14 +77,69 @@ public class SuryaActivity extends AppCompatActivity
                 FeedData postss = (FeedData) response.body();
                 mMaster = orderData(postss,0,0,0,0,0);
                 mFeedArray.add(postss);
-
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
                 call.cancel();
             }
+        });*/
+
+        spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
+        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
+        viewPager = (CustomViewPager) findViewById(R.id.pager);
+        Pager adapter = new Pager(getSupportFragmentManager());
+        //Adding adapter to pager
+        viewPager.setAdapter(adapter);
+        viewPager.setPagingEnabled(false);
+
+        spaceNavigationView.showIconOnly();
+        spaceNavigationView.setCentreButtonIcon(R.drawable.home_x);
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_dashboard_black_24dp));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_search_black_24dp));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_local_mall_black_24dp));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_supervisor_account_black_24dp));
+      //  mTextMessage = (TextView) findViewById(R.id.message);
+
+        spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+            @Override
+            public void onCentreButtonClick() {
+                Toast.makeText(SuryaActivity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+                //alertHereNow();
+            }
+
+            @Override
+            public void onItemClick(int itemIndex, String itemName) {
+                Toast.makeText(SuryaActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                switch (itemIndex){
+                    case 0:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case 1:
+                        viewPager.setCurrentItem(1);
+                        //   Intent in = new Intent(SuryaActivity.this, SocialLoginActivity.class);
+                        //   startActivity(in);
+                        break;
+
+                    case 2:
+                        viewPager.setCurrentItem(2);
+                        break;
+
+                    case 3:
+                        viewPager.setCurrentItem(3);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onItemReselected(int itemIndex, String itemName) {
+                Toast.makeText(SuryaActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+            }
         });
+
     }
 
     @Override
@@ -251,5 +305,4 @@ public class SuryaActivity extends AppCompatActivity
         }
         return valuea;
     }
-
 }

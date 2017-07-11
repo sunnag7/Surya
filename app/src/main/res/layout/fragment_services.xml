@@ -1,0 +1,25 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sun.surya.ServicesFragment">
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <fragment
+            android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
+            android:id="@+id/streetviewpanorama"
+            android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+    </LinearLayout>-->
+    <com.sun.surya.NonScrollExpandableListView
+        android:id="@+id/exp_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:groupIndicator="@null"/>
+
+</android.support.v4.widget.NestedScrollView>

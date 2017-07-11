@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="6dp">
+
+    <com.sun.surya.FontTextView
+        android:text="web_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/textView7" />
+
+    <com.sun.surya.FontTextView
+        android:text="web_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6" />
+
+    <com.sun.surya.FontTextView
+        android:textStyle="bold"
+        android:text="responsive_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/textView8" />
+
+   <com.sun.surya.FontTextView
+       android:text="resp_text"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/textView9" />
+
+   <com.sun.surya.FontTextView
+        android:textStyle="bold"
+        android:text="web_dev"
+        android:paddingTop="8dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:id="@+id/textView7a" />
+
+   <com.sun.surya.FontTextView
+        android:text="we_dev_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6a" />
+
+   <com.sun.surya.FontTextView
+        android:textStyle="bold"
+         android:text="cms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/textView8a" />
+
+   <com.sun.surya.FontTextView
+        android:text="cms_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9a" />
+
+   <com.sun.surya.FontTextView
+        android:text="cms_we"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/textView9x" />
+
+   <com.sun.surya.FontTextView
+        android:textStyle="bold"
+
+        android:text="WordPress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xf" />
+
+    <com.sun.surya.FontTextView
+        android:textStyle="bold"
+
+        android:text="WooCommerce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xe" />
+
+    <com.sun.surya.FontTextView
+        android:textStyle="bold"
+        android:text="Magento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xd" />
+    <com.sun.surya.FontTextView
+         android:text="Hex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xc" />
+    <com.sun.surya.FontTextView
+         android:text="Kentico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xb" />
+    <com.sun.surya.FontTextView
+         android:text="Shopify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/triangle_"
+        android:id="@+id/textView9xa" />
+
+    <com.sun.surya.FontTextView
+        android:text="qa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/textView8aqa" />
+
+    <com.sun.surya.FontTextView
+        android:text="qa_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9aqat" />
+
+</LinearLayout>

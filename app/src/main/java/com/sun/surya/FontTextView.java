@@ -35,15 +35,15 @@ public class FontTextView extends android.support.v7.widget.AppCompatTextView {
         switch (textStyle) {
             case Typeface.BOLD: // bold
                // return FontCache.getTypeface("Helvetica-Neu-Bold.ttf", context);
-                return FontCache.getTypeface("Lato-Bold.ttf", context);
+                return FontCache.getTypeface("HelveticaNeue.ttf", context);
             case Typeface.ITALIC: // medium
               //  return FontCache.getTypeface("HelveticaNeueMedium.ttf", context);
-                return FontCache.getTypeface("Lato-Black.ttf", context);
+                return FontCache.getTypeface("HelveticaNeue.ttf", context);
             case Typeface.BOLD_ITALIC: // bold italic
               //  return FontCache.getTypeface("SourceSansPro-BoldItalic.ttf", context);
-                return FontCache.getTypeface("Roboto-Medium.ttf", context);
+                return FontCache.getTypeface("HelveticaNeue.ttf", context);
             case Typeface.NORMAL: // regular
-                return FontCache.getTypeface("Lato-Regular.ttf", context);
+                return FontCache.getTypeface("HelveticaNeue.ttf", context);
 
             default:
                 return FontCache.getTypeface("Roboto-Medium.ttf", context);
